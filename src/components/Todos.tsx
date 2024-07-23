@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { toggleTodo, deleteTodo } from "../redux/TodosSlice";
+import styles from '../styles/todo.module.scss'
 
 type TodoProps = {
   todos: {
@@ -28,11 +29,11 @@ export const Todo: React.FC<TodoProps> = ({ todos, users }) => {
   };
 
   return (
-    <div className="list">
+    <div className={styles.list}>
       {todos.map((todo) => {
         const user = users.find((user) => user.id === todo.userId);
         return (
-          <div key={todo.id} className='todo'>
+          <div key={todo.id} className={styles.todo}>
             <input
               type="checkbox"
               checked={todo.completed}
@@ -41,7 +42,7 @@ export const Todo: React.FC<TodoProps> = ({ todos, users }) => {
             <div className="text">
               <span>{todo.title}</span> - <span>{user ? user.email : "Unknown user"}</span>              
             </div>
-            <button className='remove_button' onClick={() => handleDelete(todo.id)}>Удалить</button>
+            <button className={styles.remove_button} onClick={() => handleDelete(todo.id)}>Удалить</button>
           </div>
         );
       })}

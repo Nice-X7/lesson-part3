@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../hooks/useAppDispatch";
 import { loadTodos } from "../redux/TodosSlice";
 import { loadUsers } from "../redux/UsersSlice";
 import { Todo } from "./Todos";
+import styles from '../styles/todo.module.scss'
 
 export const Content = () => {
   const dispatch = useAppDispatch();
@@ -21,7 +22,7 @@ export const Content = () => {
   }
 
   return (
-    <div className="list">
+    <div className={styles.list}>
       <Todo todos={todos} users={users} />
     </div>
   );
