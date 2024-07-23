@@ -1,0 +1,30 @@
+$br: 6px;
+
+.list > ul > li {
+    list-style: none;
+  }
+  
+  .list {
+    max-width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .todo {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #000;
+    border-radius: $br;
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+  }
+
+  .remove_button {
+    width: 100px;
+    height: 30px;
+    border-radius: $br;
+    background-color: #F0E68C;
+  }
